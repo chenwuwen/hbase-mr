@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>hbase-mr</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>hbase2tsv</module>
+        <module>hbase2hfile</module>
+        <module>base</module>
+    </modules>
+    <repositories>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <encoding>UTF-8</encoding>
+        <scala.version>2.11.12</scala.version>
+        <avro.version>1.8.2-cdh6.3.2</avro.version>
+        <crunch.version>0.11.0-cdh6.3.2</crunch.version>
+        <flume.version>1.9.0-cdh6.3.2</flume.version>
+        <connector.version>hadoop3-1.9.10-cdh6.3.2</connector.version>
+        <hadoop.version>3.0.0-cdh6.3.2</hadoop.version>
+        <hbase.version>2.1.0-cdh6.3.2</hbase.version>
+        <indexer.version>1.5-cdh6.3.2</indexer.version>
+        <hive.version>2.1.1-cdh6.3.2</hive.version>
+        <kafka.version>2.2.1-cdh6.3.2</kafka.version>
+        <kitesdk.version>1.0.0-cdh6.3.2</kitesdk.version>
+        <kudu.version>1.10.0-cdh6.3.2</kudu.version>
+        <oozie.version>5.1.0-cdh6.3.2</oozie.version>
+        <pig.version>0.17.0-cdh6.3.2</pig.version>
+        <search.version>1.0.0-cdh6.3.2</search.version>
+        <sentry.version>2.1.0-cdh6.3.2</sentry.version>
+        <solr.version>7.4.0-cdh6.3.2</solr.version>
+        <spark.version>2.4.0-cdh6.3.2</spark.version>
+        <sqoop.version>1.4.7-cdh6.3.2</sqoop.version>
+        <zookeeper.version>3.4.5-cdh6.3.2</zookeeper.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- hbase 依赖-->
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase</artifactId>
+                <version>${hbase.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-mapreduce</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-server</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-protocol</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-common</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <!-- hadoop 依赖-->
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-client</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-hdfs</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-common</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-mapreduce-client-core</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+
+            <!-- 其他依赖-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.25</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.7.5</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
